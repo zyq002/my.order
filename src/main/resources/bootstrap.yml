@@ -1,0 +1,18 @@
+spring:
+  #application:
+    #name: my.order
+  cloud:
+    config:
+      profile: config
+      #uri: http://192.168.169.128:8080/my.config.server/
+      uri: http://192.168.0.107:8080/my.config.server
+      name: my.order
+      #label: dev
+#server:
+  #port: 8888
+#eureka:
+  #client:
+    #service-url:
+     # defaultZone: http://192.168.169.128:8080/my.demo/eureka/
+#  instance: 
+  #  prefer-ip-address: true
