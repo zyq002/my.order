@@ -15,10 +15,7 @@
 	<name>my.order Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-		<dependency>
-			<groupId>my.parent</groupId>
-			<artifactId>my.commom</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
@@ -49,7 +46,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- <dependency> <groupId></groupId> </dependency> -->
+
+		<dependency>
+			<groupId>my.parent</groupId>
+			<artifactId>my.commom</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

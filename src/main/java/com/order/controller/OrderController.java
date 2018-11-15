@@ -19,19 +19,25 @@ public class OrderController {
 
 	@Value("${demo.title}")
 	private String name;
-
-	@Autowired
-	private IOrderService orderService;
+	/*
+	 * @Autowired private IOrderService orderService;
+	 */
 
 	@RequestMapping("/send")
 	public String send() {
+
+		return "config" + name;
+	}
+
+	@RequestMapping("/testsend")
+	public String send1() {
 		Order o = new Order();
 		o.setNumber(MakeOrderNum.getOrderNumber());
 		o.setUserId(1L);
 		o.setAmount(new BigDecimal("123.3"));
 		o.setStatus("D");
 		o.setIsDel(1);
-		orderService.insert(o);
+	//	orderService.insert(o);
 		return "config" + name;
 	}
 

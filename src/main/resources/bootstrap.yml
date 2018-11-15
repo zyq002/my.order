@@ -1,6 +1,4 @@
-#spring:
-  #application:
-    #name: my.order
+
   #cloud:
     #config:
    #   profile: config
@@ -10,13 +8,10 @@
       #label: dev
 #server:
   #port: 8888
-eureka:
-  client:
-    service-url:
-      defaultZone: http://192.168.169.128:8080/my.demo/eureka/
-  instance: 
-      prefer-ip-address: true
+
 spring:
+  #application:
+    #name: my.order
   cloud:
     config:
       discovery:
@@ -24,4 +19,10 @@ spring:
         enabled: true
       profile: config
       name: my.order
-      fail-fast: true
+      #fail-fast: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.169.128:8080/my.demo/eureka/
+  instance: 
+      prefer-ip-address: true
