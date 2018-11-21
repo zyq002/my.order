@@ -2,13 +2,13 @@ package com.order.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.order.model.Order;
+import com.order.model.OrderForm;
 
 import my.com.annotation.RegisterDto;
 import my.com.base.BaseDao;
 
 @Repository
-@RegisterDto(Order.class)
-public interface IOrderDao extends BaseDao<Order>{
+@RegisterDto(OrderForm.class)
+public interface IOrderDao extends BaseDao<OrderForm>{
 
 }

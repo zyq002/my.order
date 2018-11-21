@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.order.dao.IOrderDao">
 
-	<resultMap type="com.order.model.Order" id="BaseResultMap">
+	<resultMap type="com.order.model.OrderForm" id="BaseResultMap">
 		<id column="number" property="number" />
 		<result column="user_Id" property="userId" />
 		<result column="amount" property="amount" />

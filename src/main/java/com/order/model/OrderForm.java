@@ -6,7 +6,7 @@ import java.util.Date;
 
 import my.com.annotation.Id;
 
-public class Order implements Serializable {
+public class OrderForm implements Serializable {
 
 	private static final long serialVersionUID = 146181311516056125L;
 	@Id
@@ -74,8 +74,12 @@ public class Order implements Serializable {
 		this.status = status;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "Order [number=" + number + ", userId=" + userId + ", amount=" + amount + ", createTime=" + createTime
+				+ ", updateTime=" + updateTime + ", isDel=" + isDel + ", status=" + status + "]";
 	}
-
+ 
+	
+	
 }
