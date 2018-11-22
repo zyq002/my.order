@@ -26,3 +26,10 @@ eureka:
       defaultZone: http://192.168.169.128:8080/my.demo/eureka/
       instance: 
         prefer-ip-address: true
+
+hystrix:  
+  command:  
+      default:  
+        execution:
+          timeout:enabled:false
+        
