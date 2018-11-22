@@ -10,7 +10,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.order.model.OrderDetail;
 import com.order.model.OrderForm;
+import com.order.service.IOrderDetailService;
 import com.order.service.IOrderService;
 
 import my.com.Util.MakeOrderNum;
@@ -28,12 +30,16 @@ public class OrderController {
 
 	@Autowired
 	private IOrderService orderService;
+	@Autowired
+	IOrderDetailService orderDetailService;
 
 	@RequestMapping("/send")
 	public String send() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		OrderForm order = orderService.queryById("123456");
-		System.out.println(order.toString());
+		OrderDetail orderDetail = orderDetailService.queryById(1L);
+		System.out.println("order----------------->" + order.toString());
+		System.out.println("orderDetail----------------->" + orderDetail.toString());
 		return "config" + name;
 	}
 
