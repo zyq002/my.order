@@ -26,7 +26,9 @@ eureka:
       defaultZone: http://192.168.169.128:8080/my.demo/eureka/
       instance: 
         prefer-ip-address: true
-
+        metadata-map:
+          configPath:${server.servlet.context-path:}
+          management.context-path:${server.servlet.context-path:}
 hystrix:  
   command:  
       default:  

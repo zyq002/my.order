@@ -42,8 +42,14 @@ public class OrderController {
 		System.out.println("orderDetail----------------->" + orderDetail.toString());
 		return "config" + name;
 	}
- 
-	@RequestMapping(value="/sendhello" ,method=RequestMethod.GET)
+
+	@RequestMapping("/testsend1")
+	public String send2() {
+		System.out.println("testsend10----------------------------------->");
+		return "send1";
+	}
+
+	@RequestMapping(value = "/sendhello", method = RequestMethod.GET)
 	public String hellofeign() {
 		return userFeignClient.findUser();
 	}
@@ -59,11 +65,10 @@ public class OrderController {
 		// orderService.insert(o);
 		return "config" + name;
 	}
-	
+
 	@RequestMapping("/findUser")
 	public String findUser() {
 		return "findUser";
 	}
-	
 
 }
