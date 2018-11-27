@@ -27,11 +27,17 @@ eureka:
       instance: 
         prefer-ip-address: true
         metadata-map:
-          configPath:${server.servlet.context-path:}
-          management.context-path:${server.servlet.context-path:}
+          configPath: /my.order
+          #management.context-path:${server.servlet.context-path:}
+        health-check-url: http://localhost:${server.port}${server.servlet.context-path:}/my.order/health
+        status-page-url: http://localhost:${server.port}${server.servlet.context-path:}/my.order/info
+        home-page-url: http://localhost:${server.port}${server.servlet.context-path:}
 hystrix:  
   command:  
       default:  
         execution:
           timeout:enabled:false
+logging:
+  level:
+    com.jalja.org.spring.simple.dao.FeignUserClient: DEBUG
         

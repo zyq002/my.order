@@ -53,6 +53,10 @@ public class OrderController {
 	public String hellofeign() {
 		return userFeignClient.findUser();
 	}
+	
+
+	 
+
 
 	@RequestMapping("/testsend")
 	public String send1() {
