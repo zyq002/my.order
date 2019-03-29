@@ -66,19 +66,16 @@
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
-
 		</dependency>
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus</artifactId>
-
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
 		<!-- 自定义包 -->
 		<dependency>
 			<groupId>my.parent</groupId>
@@ -89,8 +86,6 @@
 			<artifactId>my.remote</artifactId>
 		</dependency>
 	</dependencies>
-	<!-- <repositories> <repository> <id>releases</id> <url>https://oss.sonatype.org/content/repositories/snapshots/</url> 
-		</repository> </repositories> -->
 	<build>
 		<plugins>
 			<plugin>
