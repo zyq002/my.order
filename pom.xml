@@ -1,5 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>my.parent</groupId>
@@ -21,10 +24,10 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		<!-- 断路器组件 -->
-    	<dependency>
-        	<groupId>org.springframework.cloud</groupId>
-        	<artifactId>spring-cloud-starter-hystrix</artifactId>
-   	 	</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
 		<!-- 配置中心 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -59,11 +62,23 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
+		<!-- mybatis-plus begin -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
 		<!-- 自定义包 -->
 		<dependency>
 			<groupId>my.parent</groupId>
@@ -74,15 +89,27 @@
 			<artifactId>my.remote</artifactId>
 		</dependency>
 	</dependencies>
+	<!-- <repositories> <repository> <id>releases</id> <url>https://oss.sonatype.org/content/repositories/snapshots/</url> 
+		</repository> </repositories> -->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>			 
+			</plugin>
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 	</build>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://192.168.169.128:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>releases</id>
+			<url>http://192.168.169.128:8081/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
 </project>
