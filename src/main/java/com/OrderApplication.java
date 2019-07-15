@@ -1,4 +1,4 @@
-package com.example.deom;
+package com;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -14,9 +14,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @EnableDiscoveryClient
-@SpringBootApplication()
-@ComponentScan(basePackages = { "com.order.controller", "com.order.model", "com.order.service.impl",
-		"my.com.base.impl" })
+@SpringBootApplication
+/*
+ * @ComponentScan(basePackages = { "com.order.controller", "com.order.model",
+ * "com.order.service.impl", "my.com.base.impl" })
+ */
 @MapperScan("com.order.dao")
 @EnableAspectJAutoProxy
 @EnableFeignClients(basePackages = { "com.remote.feignclient" })

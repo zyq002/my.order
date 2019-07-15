@@ -4,34 +4,26 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import com.remote.entity.BaseModel;
+
 import my.com.annotation.Id;
 
-public class OrderForm implements Serializable {
+public class OrderForm extends BaseModel implements Serializable {
 
 	private static final long serialVersionUID = 146181311516056125L;
-	@Id
-	private String number;
-	private Long userId;
+
+	private String userCode;
+
 	private BigDecimal amount;
-	private Date createTime;
-	private Date updateTime;
-	private Integer isDel;
+
 	private String status;
 
-	public String getNumber() {
-		return number;
+	public String getUserCode() {
+		return userCode;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserCode(String userCode) {
+		this.userCode = userCode;
 	}
 
 	public BigDecimal getAmount() {
@@ -40,30 +32,6 @@ public class OrderForm implements Serializable {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public Integer getIsDel() {
-		return isDel;
-	}
-
-	public void setIsDel(Integer isDel) {
-		this.isDel = isDel;
 	}
 
 	public String getStatus() {
@@ -76,10 +44,11 @@ public class OrderForm implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Order [number=" + number + ", userId=" + userId + ", amount=" + amount + ", createTime=" + createTime
-				+ ", updateTime=" + updateTime + ", isDel=" + isDel + ", status=" + status + "]";
+		return "OrderForm [userCode=" + userCode + ", amount=" + amount + ", status=" + status + ", getUserCode()="
+				+ getUserCode() + ", getAmount()=" + getAmount() + ", getStatus()=" + getStatus() + ", getId()="
+				+ getId() + ", getCreateTime()=" + getCreateTime() + ", getCreateCode()=" + getCreateCode()
+				+ ", getUpdateTime()=" + getUpdateTime() + ", getUpdateCode()=" + getUpdateCode() + ", getIsDel()="
+				+ getIsDel() + "]";
 	}
- 
-	
-	
+
 }

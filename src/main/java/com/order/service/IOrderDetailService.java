@@ -1,9 +1,8 @@
 package com.order.service;
 
-import com.order.model.*;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.order.model.OrderDetail;
 
-import my.com.base.IBaseService;
-
-public interface IOrderDetailService extends IBaseService<OrderDetail> {
+public interface IOrderDetailService extends IService<OrderDetail> {
 
 }

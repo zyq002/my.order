@@ -17,7 +17,7 @@ import com.order.service.IOrderDetailService;
 import com.order.service.IOrderService;
 import com.remote.feignclient.IUserFeignClient;
 
-import my.com.Util.MakeOrderNum;
+import my.com.util.MakeOrderNum;
 
 @RestController
 @RefreshScope
@@ -28,8 +28,6 @@ public class OrderController {
 	@Value("${demo.title}")
 	private String name;
 
-	
-	
 	@Autowired
 	private IOrderService orderService;
 	@Autowired
@@ -38,8 +36,10 @@ public class OrderController {
 	@RequestMapping("/send")
 	public String send() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		OrderForm order = orderService.queryById("123456");
-		OrderDetail orderDetail = orderDetailService.queryById(1L);
+
+		OrderForm order = orderService.getById(1L);
+		OrderDetail orderDetail = orderDetailService.getById(1L);
+
 		System.out.println("order----------------->" + order.toString());
 		System.out.println("orderDetail----------------->" + orderDetail.toString());
 		return "config" + name;
@@ -55,16 +55,11 @@ public class OrderController {
 	public String hellofeign() {
 		return userFeignClient.findUser();
 	}
-	
-
-	 
-
 
 	@RequestMapping("/testsend")
 	public String send1() {
 		OrderForm o = new OrderForm();
-		o.setNumber(MakeOrderNum.getOrderNumber());
-		o.setUserId(1L);
+
 		o.setAmount(new BigDecimal("123.3"));
 		o.setStatus("D");
 		o.setIsDel(1);
