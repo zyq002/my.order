@@ -85,6 +85,10 @@
 			<groupId>my.parent</groupId>
 			<artifactId>my.remote</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+ 		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

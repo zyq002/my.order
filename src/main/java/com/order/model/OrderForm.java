@@ -2,12 +2,12 @@ package com.order.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
 
 import com.remote.entity.BaseModel;
+import com.user.model.SiteUser;
 
-import my.com.annotation.Id;
-
+import lombok.Data;
+@Data
 public class OrderForm extends BaseModel implements Serializable {
 
 	private static final long serialVersionUID = 146181311516056125L;
@@ -18,29 +18,7 @@ public class OrderForm extends BaseModel implements Serializable {
 
 	private String status;
 
-	public String getUserCode() {
-		return userCode;
-	}
-
-	public void setUserCode(String userCode) {
-		this.userCode = userCode;
-	}
-
-	public BigDecimal getAmount() {
-		return amount;
-	}
-
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
+ 
 
 	@Override
 	public String toString() {

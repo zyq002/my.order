@@ -17,7 +17,7 @@ import com.order.service.IOrderDetailService;
 import com.order.service.IOrderService;
 import com.remote.feignclient.IUserFeignClient;
 
-import my.com.util.MakeOrderNum;
+import my.com.common.Page;
 
 @RestController
 @RefreshScope
@@ -70,6 +70,11 @@ public class OrderController {
 	@RequestMapping("/findUser")
 	public String findUser() {
 		return "findUser";
+	}
+
+	@RequestMapping(value = "/getOrderByUserCode", method = RequestMethod.GET)
+	public Page<OrderForm> getOrderByUserCode(Page page, String userCode) {
+		return orderService.getOrderByUserCode(page, userCode);
 	}
 
 }
