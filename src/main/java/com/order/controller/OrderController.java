@@ -60,8 +60,7 @@ public class OrderController {
 	public String send1() {
 		OrderForm o = new OrderForm();
 
-		o.setAmount(new BigDecimal("123.3"));
-		o.setStatus("D");
+ 		o.setStatus("D");
 		o.setIsDel(1);
 		// orderService.insert(o);
 		return "config" + name;

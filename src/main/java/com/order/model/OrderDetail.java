@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import com.remote.entity.BaseModel;
-import com.user.model.SiteUser;
 
 import lombok.Data;
 @Data
