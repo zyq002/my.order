@@ -1,6 +1,5 @@
 package com.order.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -11,10 +10,7 @@ import com.order.service.IOrderDetailService;
 public class OrderDetailServiceImpl extends ServiceImpl<IOrderDetailDao,OrderDetail> implements IOrderDetailService {
 
 	
-
-	@Autowired
-	IOrderDetailDao orderDetailDao;
-	
+ 
 	 
 
  
